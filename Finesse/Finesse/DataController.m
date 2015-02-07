@@ -31,6 +31,7 @@
 #pragma mark SocketDataIO
 -(void)dataIn:(NSData *)_
 {
+    //Values for Address are Comma Separated Values.
     
 }
 
