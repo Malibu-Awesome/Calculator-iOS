@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		385B3E9D1A867BE3007A2F06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3E9C1A867BE3007A2F06 /* main.m */; };
 		385B3EA01A867BE3007A2F06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3E9F1A867BE3007A2F06 /* AppDelegate.m */; };
-		385B3EA31A867BE3007A2F06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3EA21A867BE3007A2F06 /* ViewController.m */; };
 		385B3EA61A867BE3007A2F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385B3EA41A867BE3007A2F06 /* Main.storyboard */; };
 		385B3EA81A867BE3007A2F06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385B3EA71A867BE3007A2F06 /* Images.xcassets */; };
 		385B3EAB1A867BE3007A2F06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385B3EA91A867BE3007A2F06 /* LaunchScreen.xib */; };
 		385B3EB71A867BE3007A2F06 /* FinesseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3EB61A867BE3007A2F06 /* FinesseTests.m */; };
+		38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E99FB41A8681D0004BBE17 /* SocketController.swift */; };
+		438BF3A7C6C3A620AFE606E9 /* libPods-Finesse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 045B00F6347E7F7ED12BF6C7 /* libPods-Finesse.a */; };
+		ADBC3E9AE1B1D1C799E3F89F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35CC2087D27968D8FD0D379 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +29,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045B00F6347E7F7ED12BF6C7 /* libPods-Finesse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Finesse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		385B3E971A867BE3007A2F06 /* Finesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385B3E9B1A867BE3007A2F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385B3E9C1A867BE3007A2F06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		385B3E9E1A867BE3007A2F06 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		385B3E9F1A867BE3007A2F06 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		385B3EA11A867BE3007A2F06 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		385B3EA21A867BE3007A2F06 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		385B3EA51A867BE3007A2F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		385B3EA71A867BE3007A2F06 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		385B3EAA1A867BE3007A2F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		385B3EB01A867BE3007A2F06 /* FinesseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinesseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385B3EB51A867BE3007A2F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385B3EB61A867BE3007A2F06 /* FinesseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinesseTests.m; sourceTree = "<group>"; };
+		38E99FB31A8681D0004BBE17 /* Finesse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finesse-Bridging-Header.h"; sourceTree = "<group>"; };
+		38E99FB41A8681D0004BBE17 /* SocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketController.swift; sourceTree = "<group>"; };
+		A35CC2087D27968D8FD0D379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC801B543375554DE96F1FE7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E5288EEEDD1664DB317FDEF6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBC3E9AE1B1D1C799E3F89F /* libPods.a in Frameworks */,
+				438BF3A7C6C3A620AFE606E9 /* libPods-Finesse.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +74,8 @@
 				385B3E991A867BE3007A2F06 /* Finesse */,
 				385B3EB31A867BE3007A2F06 /* FinesseTests */,
 				385B3E981A867BE3007A2F06 /* Products */,
+				52A9DF902333E52F83CBBCBF /* Pods */,
+				4EED47F4D79021D28D68E8E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,13 +91,12 @@
 		385B3E991A867BE3007A2F06 /* Finesse */ = {
 			isa = PBXGroup;
 			children = (
+				38E99FB31A8681D0004BBE17 /* Finesse-Bridging-Header.h */,
 				385B3E9E1A867BE3007A2F06 /* AppDelegate.h */,
 				385B3E9F1A867BE3007A2F06 /* AppDelegate.m */,
-				385B3EA11A867BE3007A2F06 /* ViewController.h */,
-				385B3EA21A867BE3007A2F06 /* ViewController.m */,
-				385B3EA41A867BE3007A2F06 /* Main.storyboard */,
+				38E99FB11A8681A9004BBE17 /* iOS */,
+				38E99FB21A8681B6004BBE17 /* Socket */,
 				385B3EA71A867BE3007A2F06 /* Images.xcassets */,
-				385B3EA91A867BE3007A2F06 /* LaunchScreen.xib */,
 				385B3E9A1A867BE3007A2F06 /* Supporting Files */,
 			);
 			path = Finesse;
@@ -119,6 +128,65 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		38E99FAE1A86817C004BBE17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				385B3EA41A867BE3007A2F06 /* Main.storyboard */,
+				385B3EA91A867BE3007A2F06 /* LaunchScreen.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		38E99FAF1A868194004BBE17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38E99FB01A86819D004BBE17 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		38E99FB11A8681A9004BBE17 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				38E99FB01A86819D004BBE17 /* Controller */,
+				38E99FAF1A868194004BBE17 /* Model */,
+				38E99FAE1A86817C004BBE17 /* Views */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		38E99FB21A8681B6004BBE17 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				38E99FB41A8681D0004BBE17 /* SocketController.swift */,
+			);
+			name = Socket;
+			sourceTree = "<group>";
+		};
+		4EED47F4D79021D28D68E8E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A35CC2087D27968D8FD0D379 /* libPods.a */,
+				045B00F6347E7F7ED12BF6C7 /* libPods-Finesse.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52A9DF902333E52F83CBBCBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC801B543375554DE96F1FE7 /* Pods.debug.xcconfig */,
+				E5288EEEDD1664DB317FDEF6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 385B3EBA1A867BE3007A2F06 /* Build configuration list for PBXNativeTarget "Finesse" */;
 			buildPhases = (
+				9A521D84EC9E62425F087F4C /* Check Pods Manifest.lock */,
 				385B3E931A867BE3007A2F06 /* Sources */,
 				385B3E941A867BE3007A2F06 /* Frameworks */,
 				385B3E951A867BE3007A2F06 /* Resources */,
+				112B801BEEA2F083BE1BEB9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,12 +284,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		112B801BEEA2F083BE1BEB9C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Finesse/Pods-Finesse-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A521D84EC9E62425F087F4C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		385B3E931A867BE3007A2F06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				385B3EA31A867BE3007A2F06 /* ViewController.m in Sources */,
+				38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */,
 				385B3EA01A867BE3007A2F06 /* AppDelegate.m in Sources */,
 				385B3E9D1A867BE3007A2F06 /* main.m in Sources */,
 			);
@@ -343,21 +446,28 @@
 		};
 		385B3EBB1A867BE3007A2F06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC801B543375554DE96F1FE7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Finesse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Finesse/Finesse-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		385B3EBC1A867BE3007A2F06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5288EEEDD1664DB317FDEF6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Finesse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Finesse/Finesse-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -414,6 +524,7 @@
 				385B3EBC1A867BE3007A2F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		385B3EBD1A867BE3007A2F06 /* Build configuration list for PBXNativeTarget "FinesseTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +533,7 @@
 				385B3EBF1A867BE3007A2F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

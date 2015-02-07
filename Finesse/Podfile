@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+xcodeproj 'Finesse.xcodeproj'
+platform :ios, '8.0'
+
+pod 'Starscream' , :git => "https://github.com/daltoniam/starscream.git", :tag => "0.9.1"
+
+target 'Finesse' do
+    pod 'Starscream', :git => "https://github.com/daltoniam/starscream.git", :tag => "0.9.1"
+end
