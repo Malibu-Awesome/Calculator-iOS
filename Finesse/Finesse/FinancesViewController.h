@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @protocol FinancesViewControllerDelegate <NSObject>
+
 @required
 - (void)didFinishEditingFinanceInfo: (NSDictionary *)financeInfo;
+
 @end
 
 @interface FinancesViewController : UIViewController

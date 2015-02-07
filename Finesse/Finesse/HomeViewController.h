@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "FinancesViewController.h"
 
-@interface HomeViewController : UIViewController <FinancesViewControllerDelegate>
+@interface HomeViewController : UIViewController
 
 @end

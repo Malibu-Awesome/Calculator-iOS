@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 
-@interface HomeViewController () <UITextFieldDelegate>
+@interface HomeViewController () <UITextFieldDelegate, FinancesViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *enterIncomeButton;
 @property (weak, nonatomic) IBOutlet UITextField *enterAddressTextField;
@@ -44,6 +44,10 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)didFinishEditingFinanceInfo:(NSDictionary *)financeInfo {
+    
 }
 
 @end
