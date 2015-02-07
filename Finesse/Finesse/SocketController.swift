@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 import Starscream
 
+@objc(SocketController)
 class SocketController : WebSocketDelegate {
     private var endpoint = NSURL(string: FIN_ENDPOINT)!
     var socket : WebSocket
     
 //MARK: Init
+    @objc(init)
     init () {
         self.socket = WebSocket(url: endpoint)
         //self.socket.delegate = self

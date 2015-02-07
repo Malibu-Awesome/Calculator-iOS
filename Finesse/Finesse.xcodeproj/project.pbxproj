@@ -14,6 +14,8 @@
 		385B3EAB1A867BE3007A2F06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385B3EA91A867BE3007A2F06 /* LaunchScreen.xib */; };
 		385B3EB71A867BE3007A2F06 /* FinesseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3EB61A867BE3007A2F06 /* FinesseTests.m */; };
 		388AE1CA1A86A426002E8431 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1C91A86A426002E8431 /* Constants.m */; };
+		388AE1CD1A86A6CF002E8431 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1CC1A86A6CF002E8431 /* DataController.m */; };
+		388AE1CF1A86A7CA002E8431 /* SocketControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1CE1A86A7CA002E8431 /* SocketControllerExtension.swift */; };
 		38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E99FB41A8681D0004BBE17 /* SocketController.swift */; };
 		7355388836EA44C1454DD23A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFFC2DBF7553AA69691616C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F83430FACB7CF3EEBBF074D /* Pods_FinesseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9826491FD01A890D8CD7BAD2 /* Pods_FinesseTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -44,6 +46,9 @@
 		385B3EB61A867BE3007A2F06 /* FinesseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinesseTests.m; sourceTree = "<group>"; };
 		388AE1C81A86A426002E8431 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		388AE1C91A86A426002E8431 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		388AE1CB1A86A6CF002E8431 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		388AE1CC1A86A6CF002E8431 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		388AE1CE1A86A7CA002E8431 /* SocketControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketControllerExtension.swift; sourceTree = "<group>"; };
 		38E99FB31A8681D0004BBE17 /* Finesse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finesse-Bridging-Header.h"; sourceTree = "<group>"; };
 		38E99FB41A8681D0004BBE17 /* SocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketController.swift; sourceTree = "<group>"; };
 		3DFFC2DBF7553AA69691616C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +160,8 @@
 		38E99FB01A86819D004BBE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				388AE1CB1A86A6CF002E8431 /* DataController.h */,
+				388AE1CC1A86A6CF002E8431 /* DataController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -173,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				38E99FB41A8681D0004BBE17 /* SocketController.swift */,
+				388AE1CE1A86A7CA002E8431 /* SocketControllerExtension.swift */,
 			);
 			name = Socket;
 			sourceTree = "<group>";
@@ -399,7 +407,9 @@
 			files = (
 				38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */,
 				385B3EA01A867BE3007A2F06 /* AppDelegate.m in Sources */,
+				388AE1CF1A86A7CA002E8431 /* SocketControllerExtension.swift in Sources */,
 				385B3E9D1A867BE3007A2F06 /* main.m in Sources */,
+				388AE1CD1A86A6CF002E8431 /* DataController.m in Sources */,
 				388AE1CA1A86A426002E8431 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Finesse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Finesse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
