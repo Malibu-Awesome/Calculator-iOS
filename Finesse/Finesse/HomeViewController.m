@@ -8,7 +8,8 @@
 
 #import "HomeViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *enterIncomeButton;
 @property (weak, nonatomic) IBOutlet UITextField *enterAddressTextField;
 @property (weak, nonatomic) IBOutlet UIView *resultsView;
@@ -21,7 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.enterAddressTextField.delegate = self;
+    self.resultsView.layer.cornerRadius = 10.0f;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,5 +41,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - TextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end
