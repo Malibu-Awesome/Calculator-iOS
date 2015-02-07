@@ -10,10 +10,46 @@ import Foundation
 import UIKit
 import Starscream
 
-class SocketController {
-//    var socket = WebSocket(url: <#NSURL#>)
+class SocketController : WebSocketDelegate {
+    private var endpoint = NSURL(string: FIN_ENDPOINT)!
+    var socket : WebSocket
     
+//MARK: Init
     init () {
+        self.socket = WebSocket(url: endpoint)
+        //self.socket.delegate = self
+        //self.socket.connect()
+    }
+    
+//MARK: - Messaging
+    func sendMessage () {
         
     }
+    
+//MARK: - WebSocketDelegate
+//MARK: Connection
+    func websocketDidConnect() {
+        println("Websocket connected")
+    }
+    
+    func websocketDidDisconnect(error: NSError?) {
+        println("Websocket disconnected \(error?.localizedDescription)")
+        
+    }
+    
+//MARK: Receiving
+    func websocketDidReceiveData(data: NSData) {
+        println("Received data from Websocket")
+    }
+    
+    func websocketDidReceiveMessage(text: String) {
+        println("Received message from Websocket")
+    }
+    
+//MARK: Error
+    func websocketDidWriteError(error: NSError?) {
+        println("Websocket wrote error \(error?.localizedDescription)")
+
+    }
+    
 }

@@ -1,18 +1,15 @@
 //
-//  AppDelegate.h
+//  Constants.m
 //  Finesse
 //
 //  Created by Leonardo Lee on 2/7/15.
 //  Copyright (c) 2015 Code Fellows Malibu Awesome. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "Constants.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+NSString* const FIN_ENDPOINT = @"this is where the endpoint will live";
 
-@property (strong, nonatomic) UIWindow *window;
-
+@implementation Constants
 
 @end
-
