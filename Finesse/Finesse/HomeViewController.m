@@ -9,6 +9,11 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *enterIncomeButton;
+@property (weak, nonatomic) IBOutlet UITextField *enterAddressTextField;
+@property (weak, nonatomic) IBOutlet UIView *resultsView;
+@property (weak, nonatomic) IBOutlet UILabel *resultsText;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
