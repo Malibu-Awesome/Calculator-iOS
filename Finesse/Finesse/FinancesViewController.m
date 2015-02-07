@@ -8,7 +8,7 @@
 
 #import "FinancesViewController.h"
 
-@interface FinancesViewController ()
+@interface FinancesViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *grossIncomeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *transportCostTextField;
@@ -21,23 +21,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.grossIncomeTextField.delegate = self;
+    self.transportCostTextField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)doneEditingIncome:(id)sender {
+    
 }
-*/
+
+- (IBAction)cancelEditingIncome:(id)sender {
+    
+}
+
+#pragma mark - UISlider Methods
 
 - (IBAction)housingCostSliderChanged:(id)sender {
     // Round to nearest dollar and update label
@@ -53,6 +51,13 @@
     if (value != roundValue) {
         [self.housingCostSlider setValue:roundValue animated:true];
     }
+}
+
+#pragma mark - TextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
