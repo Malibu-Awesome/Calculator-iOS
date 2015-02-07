@@ -10,6 +10,11 @@
 
 @interface FinancesViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *grossIncomeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *transportCostTextField;
+@property (weak, nonatomic) IBOutlet UISlider *housingCostSlider;
+@property (weak, nonatomic) IBOutlet UILabel *housingCostLabel;
+
 @end
 
 @implementation FinancesViewController
@@ -33,5 +38,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)housingCostSliderChanged:(id)sender {
+    // Round to nearest dollar and update label
+    CGFloat value = [self.housingCostSlider value];
+    NSInteger roundValue = (NSInteger)roundf(value);
+    self.housingCostLabel.text = [[NSString alloc] initWithFormat:@"$%ld", (long)roundValue];
+}
+
+- (IBAction)housingCostSliderFinishedEditing:(id)sender {
+    // Round to nearest dollar when slider released, and snap it to that value
+    CGFloat value = [self.housingCostSlider value];
+    NSInteger roundValue = (NSInteger)roundf(value);
+    if (value != roundValue) {
+        [self.housingCostSlider setValue:roundValue animated:true];
+    }
+}
 
 @end

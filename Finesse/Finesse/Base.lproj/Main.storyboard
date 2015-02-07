@@ -107,10 +107,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Finances View Controller-->
         <scene sceneID="vw6-G9-YOb">
             <objects>
-                <viewController id="ebS-om-JsA" sceneMemberID="viewController">
+                <viewController id="ebS-om-JsA" customClass="FinancesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mzr-sD-hHe"/>
                         <viewControllerLayoutGuide type="bottom" id="o13-KK-TQV"/>
@@ -122,16 +122,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhN-Yw-bFo">
                                 <rect key="frame" x="339" y="64" width="261" height="536"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter as USD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1v-GS-D4v">
-                                        <rect key="frame" x="8" y="120" width="233" height="30"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bk-or-oha">
                                         <rect key="frame" x="8" y="219" width="233" height="94.5"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MO0-NH-pIP">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1200" minValue="0.0" maxValue="2400" translatesAutoresizingMaskIntoConstraints="NO" id="MO0-NH-pIP">
                                                 <rect key="frame" x="6" y="46" width="221" height="31"/>
+                                                <connections>
+                                                    <action selector="housingCostSliderChanged:" destination="ebS-om-JsA" eventType="valueChanged" id="aE9-9i-SVT"/>
+                                                    <action selector="housingCostSliderFinishedEditing:" destination="ebS-om-JsA" eventType="valueChanged" id="fuK-dK-mq2"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1200" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-jb-2z7">
                                                 <rect key="frame" x="82.5" y="8" width="67" height="31.5"/>
@@ -150,6 +149,11 @@
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter as USD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-LA-VV5">
                                         <rect key="frame" x="8" y="393" width="233" height="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter as USD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1v-GS-D4v">
+                                        <rect key="frame" x="8" y="120" width="233" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -183,26 +187,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIa-Fi-3ls">
                                 <rect key="frame" x="0.0" y="64" width="339" height="536"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your gross income:" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="axV-UN-SLT">
-                                        <rect key="frame" x="25" y="120" width="290" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter how much you can spend per month on housing:" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgB-dF-atL">
                                         <rect key="frame" x="25" y="219" width="290" height="94.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="97.5" id="aId-TQ-hyA"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="aId-TQ-hyA"/>
-                                            </mask>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your monthly transportation costs:" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4wu-qi-1B5">
                                         <rect key="frame" x="25" y="376.5" width="290" height="63"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your gross income:" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="axV-UN-SLT">
+                                        <rect key="frame" x="25" y="120" width="290" height="31.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -245,10 +241,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="grossIncomeTextField" destination="b1v-GS-D4v" id="zqZ-9W-T06"/>
+                        <outlet property="housingCostLabel" destination="eIG-jb-2z7" id="mT2-xR-2nh"/>
+                        <outlet property="housingCostSlider" destination="MO0-NH-pIP" id="l33-66-lAH"/>
+                        <outlet property="transportCostTextField" destination="iQO-LA-VV5" id="MYS-Lj-ohb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uP-xx-H5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="386"/>
+            <point key="canvasLocation" x="1106" y="377"/>
         </scene>
     </scenes>
 </document>
