@@ -22,7 +22,7 @@
 {
     self = [super init];
     if (self) {
-        self.socketController = [SocketController init];
+        self.socketController = [SocketController sharedInstance];
     }
     return self;
 }

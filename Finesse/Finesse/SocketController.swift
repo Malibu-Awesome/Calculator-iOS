@@ -16,16 +16,10 @@ class SocketController : WebSocketDelegate {
     var socket : WebSocket
     
 //MARK: Init
-    @objc(init)
     init () {
         self.socket = WebSocket(url: endpoint)
         //self.socket.delegate = self
         //self.socket.connect()
-    }
-    
-//MARK: - Messaging
-    func sendMessage () {
-        
     }
     
 //MARK: - WebSocketDelegate
