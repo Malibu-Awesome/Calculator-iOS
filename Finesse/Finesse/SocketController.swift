@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
-//import Websocket
+import Starscream
 
 class SocketController {
+//    var socket = WebSocket(url: <#NSURL#>)
+    
     init () {
         
     }
-    
 }
