@@ -42,14 +42,14 @@
 - (IBAction)housingCostSliderChanged:(id)sender {
     // Round to nearest dollar and update label
     CGFloat value = [self.housingCostSlider value];
-    NSInteger roundValue = (NSInteger)roundf(value);
+    NSInteger roundValue = ((NSInteger)((value + 2.5) / 5) * 5);
     self.housingCostLabel.text = [[NSString alloc] initWithFormat:@"$%ld", (long)roundValue];
 }
 
 - (IBAction)housingCostSliderFinishedEditing:(id)sender {
     // Round to nearest dollar when slider released, and snap it to that value
     CGFloat value = [self.housingCostSlider value];
-    NSInteger roundValue = (NSInteger)roundf(value);
+    NSInteger roundValue = ((NSInteger)((value + 2.5) / 5) * 5);
     if (value != roundValue) {
         [self.housingCostSlider setValue:roundValue animated:true];
     }
