@@ -10,9 +10,14 @@
 
 @interface Address : NSObject
 
+@property (nonatomic, strong) NSString *street;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSNumber *zip;
+
 + (Address *)createAddressWithStreet:(NSString *)street
                                 city:(NSString *)city
                                state:(NSString *)state
-                                 zip:(NSUInteger *)zip;
+                                 zip:(NSNumber *)zip;
 
 @end

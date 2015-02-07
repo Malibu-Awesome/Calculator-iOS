@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserProfile.h"
 
 @interface DataController : NSObject
+
+@property (nonatomic, strong) UserProfile *userProfile;
 
 @end

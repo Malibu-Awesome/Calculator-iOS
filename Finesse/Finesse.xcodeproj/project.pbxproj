@@ -19,6 +19,7 @@
 		388AE1D81A86B6F1002E8431 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1D71A86B6F1002E8431 /* UserProfile.m */; };
 		388AE1DB1A86B773002E8431 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1DA1A86B773002E8431 /* Address.m */; };
 		38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E99FB41A8681D0004BBE17 /* SocketController.swift */; };
+		38F79E2A1A86CD3900553390 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F79E291A86CD3900553390 /* JavaScriptCore.framework */; };
 		7355388836EA44C1454DD23A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFFC2DBF7553AA69691616C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F83430FACB7CF3EEBBF074D /* Pods_FinesseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9826491FD01A890D8CD7BAD2 /* Pods_FinesseTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		388AE1DA1A86B773002E8431 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		38E99FB31A8681D0004BBE17 /* Finesse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finesse-Bridging-Header.h"; sourceTree = "<group>"; };
 		38E99FB41A8681D0004BBE17 /* SocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketController.swift; sourceTree = "<group>"; };
+		38F79E291A86CD3900553390 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		3DFFC2DBF7553AA69691616C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		875602AFD5C1F66C2021B00E /* Pods-FinesseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinesseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinesseTests/Pods-FinesseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9826491FD01A890D8CD7BAD2 /* Pods_FinesseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinesseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F79E2A1A86CD3900553390 /* JavaScriptCore.framework in Frameworks */,
 				7355388836EA44C1454DD23A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +201,7 @@
 		4EED47F4D79021D28D68E8E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38F79E291A86CD3900553390 /* JavaScriptCore.framework */,
 				045B00F6347E7F7ED12BF6C7 /* libPods-Finesse.a */,
 				3DFFC2DBF7553AA69691616C /* Pods.framework */,
 				9826491FD01A890D8CD7BAD2 /* Pods_FinesseTests.framework */,

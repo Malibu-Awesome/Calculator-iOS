@@ -29,13 +29,12 @@
 
 #pragma mark - Protocols
 #pragma mark SocketDataIO
--(void)dataIn:(NSData *)_
+-(void)dataIn
 {
-    //Values for Address are Comma Separated Values.
     
 }
 
--(void)dataOut:(NSData *)_
+-(void)dataOut:(NSDictionary *)_
 {
     
 }

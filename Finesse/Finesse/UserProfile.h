@@ -11,9 +11,14 @@
 
 @interface UserProfile : NSObject
 
+@property (readonly, nonatomic, strong) Address *address;
+@property (readonly, nonatomic, strong) NSNumber *grossIncome;
+@property (readonly, nonatomic, strong) NSNumber *percentAvailableIncome;
+@property (readonly, nonatomic, strong) NSNumber *transportationCosts;
+
 +(UserProfile *)createUserProfileWithAddress:(Address *)address
-                                 grossIncome:(NSUInteger *)gross
+                                 grossIncome:(NSNumber *)gross
                              availableIncome:(NSNumber *)available
-                         transportationCosts:(NSUInteger *)transportation;
+                         transportationCosts:(NSNumber *)transportation;
 
 @end

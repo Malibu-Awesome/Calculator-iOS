@@ -10,11 +10,11 @@ import Foundation
 
 @objc(SocketDataIO)
 protocol SocketDataIO {
-    @objc(dataIn:)
-    func dataIn(NSData)
+    @objc(dataIn)
+    func dataIn()
     
     @objc(dataOut:)
-    func dataOut(NSData)
+    func dataOut(NSDictionary)
 }
 
 extension SocketController {
@@ -34,6 +34,12 @@ extension SocketController {
 //MARK: Messaging
     
 //MARK: Data
+    
+//Values for Address are Comma Separated Values.
+    func generateDataObject () -> NSData {
+//TODO: This is just so this shuts up.
+        return NSData()
+    }
     
     
 }

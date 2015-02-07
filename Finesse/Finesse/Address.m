@@ -10,11 +10,6 @@
 
 @interface Address ()
 
-@property (nonatomic, strong) NSString *street;
-@property (nonatomic, strong) NSString *city;
-@property (nonatomic, strong) NSString *state;
-@property (nonatomic) NSUInteger *zip;
-
 @end
 
 @implementation Address
@@ -29,7 +24,7 @@
     return self;
 }
 
-+ (Address *)createAddressWithStreet:(NSString *)street city:(NSString *)city state:(NSString *)state zip:(NSUInteger *)zip
++ (Address *)createAddressWithStreet:(NSString *)street city:(NSString *)city state:(NSString *)state zip:(NSNumber *)zip
 {
     Address *address = [[Address alloc] init];
     address.street = street;
@@ -42,9 +37,12 @@
 
 #pragma mark - Updating
 //TODO: UpdateWithInfo
-- (void)updateWithInfo
+- (void)updateWithAddressWithStreet:(NSString *)street city:(NSString *)city state:(NSString *)state zip:(NSNumber *)zip
 {
-    
+    _street = street;
+    _city = city;
+    _state = state;
+    _zip = zip;
 }
 
 @end

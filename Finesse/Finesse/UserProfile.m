@@ -11,10 +11,10 @@
 
 @interface UserProfile ()
 
-@property (nonatomic, strong) Address *address;
-@property (nonatomic) NSUInteger *grossIncome;
-@property (nonatomic, strong) NSNumber *percentAvailableIncome;
-@property (nonatomic) NSUInteger *transportationCosts;
+@property (readwrite, nonatomic, strong) Address *address;
+@property (readwrite, nonatomic, strong) NSNumber *grossIncome;
+@property (readwrite, nonatomic, strong) NSNumber *percentAvailableIncome;
+@property (readwrite, nonatomic, strong) NSNumber *transportationCosts;
 
 @end
 
@@ -29,7 +29,7 @@
     return self;
 }
 
-+(UserProfile *)createUserProfileWithAddress:(Address *)address grossIncome:(NSUInteger *)gross availableIncome:(NSNumber *)available transportationCosts:(NSUInteger *)transportation
++(UserProfile *)createUserProfileWithAddress:(Address *)address grossIncome:(NSNumber *)gross availableIncome:(NSNumber *)available transportationCosts:(NSNumber *)transportation
 {
     UserProfile *profile = [[UserProfile alloc] init];
     profile.address = address;
@@ -40,29 +40,53 @@
     return profile;
 }
 
--(void)newAddress
+//Input is an dictionary with the keys: street, city, state, zip
+//Zip is an NSNumber
+-(void)createAddressWithDictionary:(NSDictionary *)input
 {
+    _address = [[Address alloc] init];
     
+    for (NSString *type in input.allKeys) {
+        if ([type  isEqualToString: @"street"]) {
+            _address.street = input[type];
+        } else if ([type isEqualToString:@"city"]) {
+            _address.city = input[type];
+        } else if ([type isEqualToString:@"state"]) {
+            _address.state = input[type];
+        } else if ([type isEqualToString:@"zip"]) {
+            _address.zip = input[type];
+        }
+    }
 }
 
--(void)updateAddress
+-(void)updateAddress:(NSDictionary *)input
 {
-    
+    for (NSString *type in input.allKeys) {
+        if ([type  isEqualToString: @"street"]) {
+            _address.street = input[type];
+        } else if ([type isEqualToString:@"city"]) {
+            _address.city = input[type];
+        } else if ([type isEqualToString:@"state"]) {
+            _address.state = input[type];
+        } else if ([type isEqualToString:@"zip"]) {
+            _address.zip = input[type];
+        }
+    }
 }
 
--(void)updateGrossIncome
+-(void)updateGrossIncome:(NSNumber *)income
 {
-    
+    _grossIncome = income;
 }
 
--(void)updatePercentAvailableIncome
+-(void)updatePercentAvailableIncome:(NSNumber *)percent
 {
-    
+    _percentAvailableIncome = percent;
 }
 
--(void)updateTransportationCosts
+-(void)updateTransportationCosts:(NSNumber *)transportation
 {
-    
+    _transportationCosts = transportation;
 }
 
 
