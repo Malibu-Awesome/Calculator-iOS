@@ -42,11 +42,17 @@
 
 -(NSDictionary *)makeDictionary
 {
-    NSDictionary *output = [NSDictionary dictionaryWithObjectsAndKeys: _address.street, @"street",
-                            _address.city, @"city",
-                            _address.state, @"state", nil];
-//    NSString *addressOutput = [NSString stringWithFormat:@"%@+%@+%@+%i", _address.street, _address.city, _address.state, [_address.zip intValue]];
-//    NSDictionary *output = [[NSDictionary alloc] initWithObjects:@[addressOutput, _grossIncome, _percentAvailableIncome, _transportationCosts] forKeys:@[@"address", @"grossIncome", @"percentAvailable", @"transportationCosts"]];
+    
+    //URL/address/city/state/HousingCost(Available Income)/transportationCosts
+    //@"http://guarded-everglades-4877.herokuapp.com/api/v0/geo-route/4600+Silver+Hill+Rd/Suitland/MD/18000/5000";
+    NSString *streetAddress = _address.street;
+    NSArray *streetSegments = [streetAddress componentsSeparatedByString:@" "];
+    streetAddress = [streetSegments componentsJoinedByString:@"+"];
+    
+    NSDictionary *address = @{ @"street":streetAddress, @"city":_address.city, @"state":_address.city };
+    NSDictionary *output = [[NSDictionary alloc] initWithObjects:@[address, _grossIncome, _availableIncome, _transportationCosts]
+                                                         forKeys:@[@"address", @"grossIncome", @"available", @"transportationCosts"]];
+    
     return output;
 }
 

@@ -33,6 +33,19 @@
     
     //This was just to test.
 //    [_networkController testGETRequest];
+
+    //Sample Request.
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSDictionary *sample = @{@"address":@{@"street":@"4726 15th AVE NE", @"city":@"Seattle", @"state":@"WA"}, @"available":@"30000", @"transportationCosts":@"50000"};
+        [_networkController createGetRequestWithParams:sample completionHandler:^(NSError *error, NSString *response) {
+            NSLog(@"reponded");
+            if (error) {
+                NSLog(@"Error: %@", error.localizedDescription);
+            } else {
+                NSLog(@"%@", response);
+            }
+        }];
+    }];
     
     return YES;
 }
