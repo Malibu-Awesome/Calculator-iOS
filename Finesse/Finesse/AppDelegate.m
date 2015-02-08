@@ -7,11 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "DataController.h"
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) DataController *dataController;
 @property (nonatomic, strong) NSOperationQueue *dataQueue;
 
 @end

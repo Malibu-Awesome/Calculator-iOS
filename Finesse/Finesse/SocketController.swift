@@ -44,7 +44,7 @@ class SocketController : WebSocketDelegate {
     
     func websocketDidReceiveMessage(text: String) {
         println("Received message from Websocket")
-        println("Text: \(text)")
+        println("Text:\n\(text)")
     }
     
 //MARK: Error

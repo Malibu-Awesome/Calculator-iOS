@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "DataController.h"
+#import "NetworkController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) DataController *dataController;
+@property (nonatomic, strong) NetworkController * networkController;
 
 
 @end

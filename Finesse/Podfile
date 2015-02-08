@@ -4,6 +4,7 @@ xcodeproj 'Finesse.xcodeproj'
 platform :ios, '8.0'
 
 pod 'Starscream', :git => "https://github.com/daltoniam/starscream.git", :tag => "0.9.1"
+pod "AFNetworking", "~> 2.0"
 
 target 'FinesseTests' do
     pod 'Starscream', :git => "https://github.com/daltoniam/starscream.git", :tag => "0.9.1"
