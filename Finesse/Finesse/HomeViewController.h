@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FinancesViewController.h"
+#import "AppDelegate.h"
 
 @interface HomeViewController : UIViewController
 

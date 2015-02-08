@@ -134,6 +134,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="KZC-p7-0j7" id="KYI-XR-hiz"/>
+                        <outlet property="calculateButton" destination="xP3-Ht-zmg" id="s8c-4t-TIu"/>
                         <outlet property="cityTextField" destination="sGC-XN-Xpp" id="HdN-Em-vzj"/>
                         <outlet property="enterIncomeButton" destination="nl7-iX-cS6" id="YzE-Bh-diF"/>
                         <outlet property="resultsText" destination="8JN-wU-Tri" id="0Hu-qh-2x8"/>
@@ -298,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uP-xx-H5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="297"/>
+            <point key="canvasLocation" x="1153" y="305"/>
         </scene>
     </scenes>
 </document>

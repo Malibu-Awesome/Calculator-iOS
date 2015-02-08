@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *resultsView;
 @property (weak, nonatomic) IBOutlet UILabel *resultsText;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *calculateButton;
 @property (strong, nonatomic) UserProfile *userProfile;
 
 @end
@@ -94,7 +95,29 @@
                                                 }]];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        
+        self.calculateButton.hidden = YES;
+        [self.activityIndicator startAnimating];
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSDictionary *params = [self.userProfile makeDictionary];
+        [appDelegate.networkController createGetRequestWithParams:params completionHandler:^(NSError *error, NSString *response) {
+                if (error == nil) {
+                    [self.activityIndicator stopAnimating];
+                    self.resultsView.backgroundColor = [UIColor greenColor];
+                    self.resultsText.text = @"Success!";
+                    self.resultsView.hidden = NO;
+                } else {
+                    [self.activityIndicator stopAnimating];
+                    self.calculateButton.hidden = NO;
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Error!"
+                                                                                   message:@"There was a network error, please try again."
+                                                                            preferredStyle: UIAlertControllerStyleAlert];
+                    [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:nil]];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+        }];
     }
 }
+
 @end
