@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *resultsView;
 @property (weak, nonatomic) IBOutlet UILabel *resultsText;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) UserProfile *userProfile;
+@property (strong, nonatomic) UserProfile *userProfile;
 
 @end
 
@@ -27,8 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.streetAddressTextField.delegate = self;
+    self.cityTextField.delegate = self;
+    self.stateTextField.delegate = self;
+    self.zipTextField.delegate = self;
     self.resultsView.layer.cornerRadius = 10.0f;
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                action:@selector(dismissEditing)];
+    tapGesture.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 #pragma mark - Navigation
@@ -47,8 +54,47 @@
     return YES;
 }
 
+#pragma mark - FinancesViewControllerDelegate methods
+
 - (void)didFinishEditingFinanceInfo:(UserProfile *)userProfile {
-    self.userProfile = userProfile;
+    _userProfile = userProfile;
 }
 
+#pragma mark - UIGestureRecognizer selectors
+
+- (void)dismissEditing {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)calculateAffordability:(id)sender {
+    if ([self.streetAddressTextField.text isEqualToString:@""] ||
+        [self.cityTextField.text isEqualToString:@""] ||
+        [self.stateTextField.text isEqualToString:@""] ||
+        [self.zipTextField.text isEqualToString:@""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Error!"
+                                                                       message:@"You need to enter all information!"
+                                                                preferredStyle: UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    } else if (self.userProfile == nil) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Error!"
+                                                                       message: @"You need to enter your finances!"
+                                                                preferredStyle: UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                                  style:UIAlertActionStyleCancel
+                                                handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Go to Finances"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:^(UIAlertAction *action) {
+                                                    [self performSegueWithIdentifier:@"PRESENT_FINANCEVC"
+                                                                              sender:self];
+                                                }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        
+    }
+}
 @end

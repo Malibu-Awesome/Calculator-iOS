@@ -32,13 +32,14 @@
 #pragma mark - Navigation
 
 - (IBAction)doneEditingIncome:(id)sender {
-    if (![self.grossIncomeTextField.text isEqualToString: @""] &&
+    if (![self.grossIncomeTextField.text isEqualToString: @""] ||
         ![self.transportCostTextField.text isEqualToString:@""]) {
         [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
             NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
             formatter.numberStyle = NSNumberFormatterDecimalStyle;
             NSNumber *grossIncome = [formatter numberFromString: self.grossIncomeTextField.text];
             NSNumber *transportationCosts = [formatter numberFromString: self.transportCostTextField.text];
+            transportationCosts = [NSNumber numberWithInt: [transportationCosts intValue] * 12];
             NSNumber *availableIncome = [NSNumber numberWithFloat: (self.housingCostSlider.value * 12)];
             UserProfile *userProfile = [UserProfile createUserProfileWithAddress:nil
                                                                      grossIncome:grossIncome
