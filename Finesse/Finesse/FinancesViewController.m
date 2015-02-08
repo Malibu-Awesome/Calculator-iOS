@@ -43,16 +43,16 @@
 #pragma mark - UISlider Methods
 
 - (IBAction)housingCostSliderChanged:(id)sender {
-    // Round to nearest dollar and update label
+    // Round to nearest value divisible by 50 and update label
     CGFloat value = [self.housingCostSlider value];
-    NSInteger roundValue = ((NSInteger)((value + 2.5) / 5) * 5);
+    int roundValue = ((int)((value + 25) / 50) * 50);
     self.housingCostLabel.text = [[NSString alloc] initWithFormat:@"$%ld", (long)roundValue];
 }
 
 - (IBAction)housingCostSliderFinishedEditing:(id)sender {
-    // Round to nearest dollar when slider released, and snap it to that value
+    // Round to nearest value divisible by 50 when slider released, and snap it to that value
     CGFloat value = [self.housingCostSlider value];
-    NSInteger roundValue = ((NSInteger)((value + 2.5) / 5) * 5);
+    int roundValue = ((int)((value + 25) / 50) * 50);
     if (value != roundValue) {
         [self.housingCostSlider setValue:roundValue animated:true];
     }
@@ -62,6 +62,17 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    if (textField == self.grossIncomeTextField && self.grossIncomeTextField.text != nil) {
+        int income = [self.grossIncomeTextField.text intValue];
+        // Set the default housing budget to 36% of gross income & round to nearest number divisible by 50
+        int defaultHousingCost = (int)(((income / 12 * 0.36) + 25) / 50) * 50;
+        // Set the maximum housing budget to double the default cost
+        int maxHousingCost = defaultHousingCost * 2;
+        // Set slider and label accordingly
+        self.housingCostSlider.maximumValue = maxHousingCost;
+        self.housingCostSlider.value = defaultHousingCost;
+        self.housingCostLabel.text = [[NSString alloc] initWithFormat:@"$%ld", (long)defaultHousingCost];
+    }
     return YES;
 }
 
