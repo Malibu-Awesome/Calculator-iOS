@@ -12,7 +12,7 @@ import Starscream
 
 @objc(SocketController)
 class SocketController : WebSocketDelegate {
-    private var endpoint = NSURL(string: FIN_ENDPOINT)!
+    private var endpoint = NSURL(string: ENDPOINT)!
     var socket : WebSocket
     
 //MARK: Init

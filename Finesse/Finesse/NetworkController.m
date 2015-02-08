@@ -25,7 +25,7 @@
     if (self) {
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _opManager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:config];
-        _reqManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:FIN_ENDPOINT]];
+        _reqManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:ENDPOINT]];
         
         NSOperationQueue *operationQueue = _reqManager.operationQueue;
         [_reqManager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -73,8 +73,13 @@
     [[NSOperationQueue mainQueue] addOperation:op];
 }
 
--(void)createGetRequestWithURL:(NSString *)urlString andParams:(NSDictionary *)params
+-(void)createGetRequestWithParams:(NSDictionary *)params
 {
+    NSString *streetString = params[@"street"];
+    streetString = [streetString stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    //TODO: I need to make sure that streetString does not start or end with a " ".
+    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@/%@", ENDPOINT, streetString, params[@"city"], params[@"state"]];
+    
     NSError *error;
     [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlString parameters:params error:&error];
     //Test with Reachability

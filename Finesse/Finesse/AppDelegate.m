@@ -31,7 +31,8 @@
     }];
     //[[NSNotificationCenter defaultCenter] postNotificationName:<#(NSString *)#> object:<#(id)#> userInfo:<#(NSDictionary *)#>];
     
-    [_networkController testGETRequest];
+    //This was just to test.
+//    [_networkController testGETRequest];
     
     return YES;
 }
