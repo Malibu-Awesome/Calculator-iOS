@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "DataController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) DataController *dataController;
+@property (nonatomic, strong) NSOperationQueue *dataQueue;
 
 @end
 
@@ -17,6 +21,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _dataController = [DataController sharedInstance];
+    
+    _dataQueue = [[NSOperationQueue alloc] init];
+    _dataQueue.qualityOfService = NSOperationQueuePriorityHigh;
+    _dataQueue.maxConcurrentOperationCount = 1;
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"" object:self queue:_dataQueue usingBlock:^(NSNotification *note) {
+        //
+    }];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:<#(NSString *)#> object:<#(id)#> userInfo:<#(NSDictionary *)#>];
+    
     return YES;
 }
 
@@ -28,10 +43,16 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    //[[NSNotificationCenter defaultCenter] removeObserver:self name:@"" object:nil];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"" object:self queue:_dataQueue usingBlock:^(NSNotification *note) {
+        //
+    }];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

@@ -36,10 +36,15 @@ class SocketController : WebSocketDelegate {
 //MARK: Receiving
     func websocketDidReceiveData(data: NSData) {
         println("Received data from Websocket")
+        println("\(data)");
+        var error : NSError?
+        var receivedJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+        println("\(receivedJSON)")
     }
     
     func websocketDidReceiveMessage(text: String) {
         println("Received message from Websocket")
+        println("Text: \(text)")
     }
     
 //MARK: Error
