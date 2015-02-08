@@ -93,6 +93,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         completionHandler(error, nil);
     }];
+    [[NSOperationQueue mainQueue] addOperation:operation];
 }
 
 
