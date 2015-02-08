@@ -18,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter address as Street, City, State, Zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7dA-O6-OFq">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7dA-O6-OFq">
                                 <rect key="frame" x="167" y="169" width="266.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="266.5" id="58d-fK-dxQ"/>
                                     <constraint firstAttribute="height" constant="30" id="x7P-Cn-hpe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can I afford to live near here?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999964" translatesAutoresizingMaskIntoConstraints="NO" id="B0i-wa-Ogv">
                                 <rect key="frame" x="120" y="72" width="361" height="37"/>
@@ -33,22 +33,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl7-iX-cS6">
-                                <rect key="frame" x="227" y="259" width="146" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="VPd-rl-KQW"/>
-                                    <constraint firstAttribute="height" constant="45" id="mnZ-Z0-9JA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                <state key="normal" title="Enter Income">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ebS-om-JsA" kind="presentation" id="d2S-Hh-0s5"/>
-                                </connections>
-                            </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ry-w4-7cj">
-                                <rect key="frame" x="150" y="384" width="300" height="117"/>
+                                <rect key="frame" x="150" y="403" width="300" height="117"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maybe!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JN-wU-Tri">
                                         <rect key="frame" x="103" y="40" width="93.5" height="37"/>
@@ -66,46 +52,101 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xP3-Ht-zmg">
-                                <rect key="frame" x="232" y="415" width="136" height="56"/>
+                                <rect key="frame" x="232" y="434" width="136" height="56"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="32"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculateAffordability:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRk-Dm-P9P"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KZC-p7-0j7">
-                                <rect key="frame" x="282" y="424" width="37" height="37"/>
+                                <rect key="frame" x="282" y="443" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGC-XN-Xpp">
+                                <rect key="frame" x="167" y="207" width="125" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="arR-Er-Le5"/>
+                                    <constraint firstAttribute="height" constant="30" id="cBV-2a-SAv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rpj-Wb-YgX">
+                                <rect key="frame" x="300" y="207" width="67.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mPW-70-OjG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTv-P9-yDv">
+                                <rect key="frame" x="376" y="207" width="57.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57.5" id="iyk-yn-gBE"/>
+                                    <constraint firstAttribute="height" constant="30" id="lmx-Ki-qpI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nl7-iX-cS6">
+                                <rect key="frame" x="227" y="317" width="146" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="VPd-rl-KQW"/>
+                                    <constraint firstAttribute="height" constant="45" id="mnZ-Z0-9JA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="Enter Income">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ebS-om-JsA" kind="presentation" identifier="PRESENT_FINANCEVC" id="d2S-Hh-0s5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84313725490000002" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lTv-P9-yDv" firstAttribute="leading" secondItem="rpj-Wb-YgX" secondAttribute="trailing" constant="8" id="1yq-CK-0eY"/>
                             <constraint firstItem="KZC-p7-0j7" firstAttribute="centerX" secondItem="xP3-Ht-zmg" secondAttribute="centerX" constant="0.5" id="2oa-dJ-cV9"/>
                             <constraint firstItem="2Ry-w4-7cj" firstAttribute="centerY" secondItem="xP3-Ht-zmg" secondAttribute="centerY" constant="-0.5" id="5S6-sq-DhH"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="B0i-wa-Ogv" secondAttribute="trailing" constant="30" id="7B1-DO-RfU"/>
+                            <constraint firstItem="rpj-Wb-YgX" firstAttribute="top" secondItem="7dA-O6-OFq" secondAttribute="bottom" constant="8" id="7OO-Mt-7gH"/>
+                            <constraint firstItem="sGC-XN-Xpp" firstAttribute="leading" secondItem="7dA-O6-OFq" secondAttribute="leading" id="9pD-kM-MWD"/>
                             <constraint firstItem="B0i-wa-Ogv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="DRy-VM-2dQ"/>
+                            <constraint firstItem="7dA-O6-OFq" firstAttribute="trailing" secondItem="lTv-P9-yDv" secondAttribute="trailing" id="JFO-Ix-NMh"/>
                             <constraint firstItem="7dA-O6-OFq" firstAttribute="top" secondItem="B0i-wa-Ogv" secondAttribute="bottom" constant="60" id="OEn-Xl-1qf"/>
                             <constraint firstItem="B0i-wa-Ogv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="On2-0A-gFQ"/>
-                            <constraint firstItem="2Ry-w4-7cj" firstAttribute="top" relation="lessThanOrEqual" secondItem="nl7-iX-cS6" secondAttribute="bottom" constant="80" id="YQR-dA-0Ex"/>
+                            <constraint firstItem="lTv-P9-yDv" firstAttribute="top" secondItem="7dA-O6-OFq" secondAttribute="bottom" constant="8" id="VZ2-8M-6hJ"/>
+                            <constraint firstItem="2Ry-w4-7cj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nl7-iX-cS6" secondAttribute="bottom" constant="40" id="YQR-dA-0Ex"/>
                             <constraint firstAttribute="centerX" secondItem="B0i-wa-Ogv" secondAttribute="centerX" constant="-0.5" id="Ysd-OZ-lim"/>
                             <constraint firstItem="KZC-p7-0j7" firstAttribute="centerY" secondItem="xP3-Ht-zmg" secondAttribute="centerY" constant="-0.5" id="aaO-67-SAg"/>
                             <constraint firstAttribute="centerX" secondItem="2Ry-w4-7cj" secondAttribute="centerX" id="duW-Qq-hpW"/>
                             <constraint firstAttribute="centerX" secondItem="nl7-iX-cS6" secondAttribute="centerX" id="exu-Qj-M9u"/>
+                            <constraint firstItem="sGC-XN-Xpp" firstAttribute="top" secondItem="7dA-O6-OFq" secondAttribute="bottom" constant="8" id="gEx-TT-WFI"/>
+                            <constraint firstItem="rpj-Wb-YgX" firstAttribute="leading" secondItem="sGC-XN-Xpp" secondAttribute="trailing" constant="8" id="gOW-di-dVx"/>
+                            <constraint firstItem="nl7-iX-cS6" firstAttribute="top" secondItem="sGC-XN-Xpp" secondAttribute="bottom" constant="80" id="jMT-Wh-APL"/>
                             <constraint firstAttribute="centerX" secondItem="7dA-O6-OFq" secondAttribute="centerX" id="oI0-dD-24v"/>
-                            <constraint firstItem="nl7-iX-cS6" firstAttribute="top" secondItem="7dA-O6-OFq" secondAttribute="bottom" constant="60" id="vri-hj-jfy"/>
                             <constraint firstAttribute="centerX" secondItem="xP3-Ht-zmg" secondAttribute="centerX" id="xeV-em-EZL"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="lessThanOrEqual" secondItem="2Ry-w4-7cj" secondAttribute="bottom" constant="99" id="zMD-Qn-X9E"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Ry-w4-7cj" secondAttribute="bottom" priority="999" constant="80" id="zMD-Qn-X9E"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="KZC-p7-0j7" id="KYI-XR-hiz"/>
-                        <outlet property="enterAddressTextField" destination="7dA-O6-OFq" id="slk-Ne-S2r"/>
+                        <outlet property="calculateButton" destination="xP3-Ht-zmg" id="s8c-4t-TIu"/>
+                        <outlet property="cityTextField" destination="sGC-XN-Xpp" id="HdN-Em-vzj"/>
                         <outlet property="enterIncomeButton" destination="nl7-iX-cS6" id="YzE-Bh-diF"/>
                         <outlet property="resultsText" destination="8JN-wU-Tri" id="0Hu-qh-2x8"/>
                         <outlet property="resultsView" destination="2Ry-w4-7cj" id="n2F-L0-SRh"/>
+                        <outlet property="stateTextField" destination="rpj-Wb-YgX" id="mx5-YZ-BfH"/>
+                        <outlet property="streetAddressTextField" destination="7dA-O6-OFq" id="ApO-h4-v0p"/>
+                        <outlet property="zipTextField" destination="lTv-P9-yDv" id="mIJ-Xa-6Zg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="438" y="305"/>
         </scene>
         <!--Finances View Controller-->
         <scene sceneID="vw6-G9-YOb">
@@ -150,12 +191,12 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter as USD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-LA-VV5">
                                         <rect key="frame" x="8" y="393" width="233" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter as USD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1v-GS-D4v">
                                         <rect key="frame" x="8" y="120" width="233" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -258,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uP-xx-H5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="369"/>
+            <point key="canvasLocation" x="1153" y="305"/>
         </scene>
     </scenes>
 </document>

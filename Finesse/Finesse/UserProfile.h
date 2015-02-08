@@ -13,7 +13,7 @@
 
 @property (readonly, nonatomic, strong) Address *address;
 @property (readonly, nonatomic, strong) NSNumber *grossIncome;
-@property (readonly, nonatomic, strong) NSNumber *percentAvailableIncome;
+@property (readonly, nonatomic, strong) NSNumber *availableIncome;
 @property (readonly, nonatomic, strong) NSNumber *transportationCosts;
 
 +(UserProfile *)createUserProfileWithAddress:(Address *)address

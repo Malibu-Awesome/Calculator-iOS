@@ -13,7 +13,7 @@
 
 @property (readwrite, nonatomic, strong) Address *address;
 @property (readwrite, nonatomic, strong) NSNumber *grossIncome;
-@property (readwrite, nonatomic, strong) NSNumber *percentAvailableIncome;
+@property (readwrite, nonatomic, strong) NSNumber *availableIncome;
 @property (readwrite, nonatomic, strong) NSNumber *transportationCosts;
 
 @end
@@ -34,7 +34,7 @@
     UserProfile *profile = [[UserProfile alloc] init];
     profile.address = address;
     profile.grossIncome = gross;
-    profile.percentAvailableIncome = available;
+    profile.AvailableIncome = available;
     profile.transportationCosts = transportation;
     
     return profile;
@@ -89,9 +89,9 @@
     _grossIncome = income;
 }
 
--(void)updatePercentAvailableIncome:(NSNumber *)percent
+-(void)updateAvailableIncome:(NSNumber *)income
 {
-    _percentAvailableIncome = percent;
+    _availableIncome = income;
 }
 
 -(void)updateTransportationCosts:(NSNumber *)transportation

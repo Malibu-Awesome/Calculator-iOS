@@ -13,6 +13,6 @@
 
 +(NetworkController *)sharedInstance;
 -(void)testGETRequest;
--(void)createGetRequestWithParams:(NSDictionary *)params;
+-(void)createGetRequestWithParams:(NSDictionary *)params completionHandler: (void (^)(NSError *error, NSString *response)) completionHandler;
 
 @end
