@@ -98,6 +98,16 @@
         self.calculateButton.hidden = YES;
         [self.activityIndicator startAnimating];
         AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        //Input is an dictionary with the keys: street, city, state, zip
+        //Zip is an NSNumber
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        formatter.numberStyle = NSNumberFormatterDecimalStyle;
+        NSNumber *zip = [formatter numberFromString:self.zipTextField.text];
+        NSDictionary *addressDict = @{@"street": self.streetAddressTextField.text,
+                                      @"city": self.cityTextField.text,
+                                      @"state": self.stateTextField.text,
+                                      @"zip": zip};
+        [self.userProfile createAddressWithDictionary:addressDict];
         NSDictionary *params = [self.userProfile makeDictionary];
         [appDelegate.networkController createGetRequestWithParams:params completionHandler:^(NSError *error, NSString *response) {
                 if (error == nil) {
@@ -158,7 +168,7 @@
                                             handler:^(UIAlertAction *action) {
                                                 [self resetAll];
                                             }]];
-
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)resetAll {

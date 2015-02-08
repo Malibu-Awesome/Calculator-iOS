@@ -21,5 +21,6 @@
                              availableIncome:(NSNumber *)available
                          transportationCosts:(NSNumber *)transportation;
 -(NSDictionary *)makeDictionary;
+-(void)createAddressWithDictionary:(NSDictionary *)input;
 
 @end
