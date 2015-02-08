@@ -79,7 +79,6 @@
                                                   style:UIAlertActionStyleDefault
                                                 handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
-
     } else if (self.userProfile == nil) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Error!"
                                                                        message: @"You need to enter your finances!"
@@ -102,9 +101,32 @@
         [appDelegate.networkController createGetRequestWithParams:params completionHandler:^(NSError *error, NSString *response) {
                 if (error == nil) {
                     [self.activityIndicator stopAnimating];
-                    self.resultsView.backgroundColor = [UIColor greenColor];
-                    self.resultsText.text = @"Success!";
-                    self.resultsView.hidden = NO;
+                    if ([response isEqualToString: @"green"]) {
+                        self.resultsView.backgroundColor = [UIColor greenColor];
+                        self.resultsText.textColor = [UIColor whiteColor];
+                        self.resultsText.text = @"Yes!";
+                        self.resultsView.hidden = NO;
+                    } else if ([response isEqualToString: @"yellow"]) {
+                        self.resultsView.backgroundColor = [UIColor yellowColor];
+                        self.resultsText.text = @"Maybe";
+                        self.resultsView.hidden = NO;
+                    } else if ([response isEqualToString:@"red"]) {
+                        self.resultsView.backgroundColor = [UIColor redColor];
+                        self.resultsText.textColor = [UIColor whiteColor];
+                        self.resultsText.text = @"No";
+                        self.resultsView.hidden = NO;
+                    } else {
+                        [self.activityIndicator stopAnimating];
+                        self.calculateButton.hidden = NO;
+                        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Error!"
+                                                                                       message:@"There was a network error, please try again."
+                                                                                preferredStyle: UIAlertControllerStyleAlert];
+                        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                                  style:UIAlertActionStyleDefault
+                                                                handler:nil]];
+                        [self presentViewController:alert animated:YES completion:nil];
+                    }
+
                 } else {
                     [self.activityIndicator stopAnimating];
                     self.calculateButton.hidden = NO;
