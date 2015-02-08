@@ -15,7 +15,13 @@
 		385B3EA81A867BE3007A2F06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385B3EA71A867BE3007A2F06 /* Images.xcassets */; };
 		385B3EAB1A867BE3007A2F06 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385B3EA91A867BE3007A2F06 /* LaunchScreen.xib */; };
 		385B3EB71A867BE3007A2F06 /* FinesseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3EB61A867BE3007A2F06 /* FinesseTests.m */; };
+		388AE1CA1A86A426002E8431 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1C91A86A426002E8431 /* Constants.m */; };
+		388AE1CD1A86A6CF002E8431 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1CC1A86A6CF002E8431 /* DataController.m */; };
+		388AE1CF1A86A7CA002E8431 /* SocketControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1CE1A86A7CA002E8431 /* SocketControllerExtension.swift */; };
+		388AE1D81A86B6F1002E8431 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1D71A86B6F1002E8431 /* UserProfile.m */; };
+		388AE1DB1A86B773002E8431 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1DA1A86B773002E8431 /* Address.m */; };
 		38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E99FB41A8681D0004BBE17 /* SocketController.swift */; };
+		38F79E2A1A86CD3900553390 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F79E291A86CD3900553390 /* JavaScriptCore.framework */; };
 		7355388836EA44C1454DD23A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFFC2DBF7553AA69691616C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8F83430FACB7CF3EEBBF074D /* Pods_FinesseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9826491FD01A890D8CD7BAD2 /* Pods_FinesseTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -47,8 +53,18 @@
 		385B3EB01A867BE3007A2F06 /* FinesseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinesseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385B3EB51A867BE3007A2F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385B3EB61A867BE3007A2F06 /* FinesseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinesseTests.m; sourceTree = "<group>"; };
+		388AE1C81A86A426002E8431 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		388AE1C91A86A426002E8431 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		388AE1CB1A86A6CF002E8431 /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		388AE1CC1A86A6CF002E8431 /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		388AE1CE1A86A7CA002E8431 /* SocketControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketControllerExtension.swift; sourceTree = "<group>"; };
+		388AE1D61A86B6F1002E8431 /* UserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfile.h; sourceTree = "<group>"; };
+		388AE1D71A86B6F1002E8431 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
+		388AE1D91A86B773002E8431 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		388AE1DA1A86B773002E8431 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		38E99FB31A8681D0004BBE17 /* Finesse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finesse-Bridging-Header.h"; sourceTree = "<group>"; };
 		38E99FB41A8681D0004BBE17 /* SocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketController.swift; sourceTree = "<group>"; };
+		38F79E291A86CD3900553390 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		3DFFC2DBF7553AA69691616C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		875602AFD5C1F66C2021B00E /* Pods-FinesseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinesseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinesseTests/Pods-FinesseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9826491FD01A890D8CD7BAD2 /* Pods_FinesseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinesseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F79E2A1A86CD3900553390 /* JavaScriptCore.framework in Frameworks */,
 				7355388836EA44C1454DD23A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +117,8 @@
 		385B3E991A867BE3007A2F06 /* Finesse */ = {
 			isa = PBXGroup;
 			children = (
+				388AE1C81A86A426002E8431 /* Constants.h */,
+				388AE1C91A86A426002E8431 /* Constants.m */,
 				38E99FB31A8681D0004BBE17 /* Finesse-Bridging-Header.h */,
 				385B3E9E1A867BE3007A2F06 /* AppDelegate.h */,
 				385B3E9F1A867BE3007A2F06 /* AppDelegate.m */,
@@ -149,6 +168,10 @@
 		38E99FAF1A868194004BBE17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				388AE1D61A86B6F1002E8431 /* UserProfile.h */,
+				388AE1D71A86B6F1002E8431 /* UserProfile.m */,
+				388AE1D91A86B773002E8431 /* Address.h */,
+				388AE1DA1A86B773002E8431 /* Address.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -158,6 +181,8 @@
 			children = (
 				156DB8FF1A86A2D1001C6172 /* HomeViewController.h */,
 				156DB9001A86A2D1001C6172 /* HomeViewController.m */,
+				388AE1CB1A86A6CF002E8431 /* DataController.h */,
+				388AE1CC1A86A6CF002E8431 /* DataController.m */,
 				156DB9021A86B239001C6172 /* FinancesViewController.h */,
 				156DB9031A86B239001C6172 /* FinancesViewController.m */,
 			);
@@ -178,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				38E99FB41A8681D0004BBE17 /* SocketController.swift */,
+				388AE1CE1A86A7CA002E8431 /* SocketControllerExtension.swift */,
 			);
 			name = Socket;
 			sourceTree = "<group>";
@@ -185,6 +211,7 @@
 		4EED47F4D79021D28D68E8E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38F79E291A86CD3900553390 /* JavaScriptCore.framework */,
 				045B00F6347E7F7ED12BF6C7 /* libPods-Finesse.a */,
 				3DFFC2DBF7553AA69691616C /* Pods.framework */,
 				9826491FD01A890D8CD7BAD2 /* Pods_FinesseTests.framework */,
@@ -404,8 +431,13 @@
 			files = (
 				38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */,
 				385B3EA01A867BE3007A2F06 /* AppDelegate.m in Sources */,
+				388AE1DB1A86B773002E8431 /* Address.m in Sources */,
+				388AE1CF1A86A7CA002E8431 /* SocketControllerExtension.swift in Sources */,
 				385B3E9D1A867BE3007A2F06 /* main.m in Sources */,
+				388AE1D81A86B6F1002E8431 /* UserProfile.m in Sources */,
 				156DB9011A86A2D1001C6172 /* HomeViewController.m in Sources */,
+				388AE1CD1A86A6CF002E8431 /* DataController.m in Sources */,
+				388AE1CA1A86A426002E8431 /* Constants.m in Sources */,
 				156DB9041A86B239001C6172 /* FinancesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Finesse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Finesse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
