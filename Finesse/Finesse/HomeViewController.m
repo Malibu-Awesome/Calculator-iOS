@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *resultsText;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *calculateButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (strong, nonatomic) UserProfile *userProfile;
 
 @end
@@ -106,15 +107,18 @@
                         self.resultsText.textColor = [UIColor whiteColor];
                         self.resultsText.text = @"Yes!";
                         self.resultsView.hidden = NO;
+                        self.resetButton.hidden = NO;
                     } else if ([response isEqualToString: @"yellow"]) {
                         self.resultsView.backgroundColor = [UIColor yellowColor];
                         self.resultsText.text = @"Maybe";
                         self.resultsView.hidden = NO;
+                        self.resetButton.hidden = NO;
                     } else if ([response isEqualToString:@"red"]) {
                         self.resultsView.backgroundColor = [UIColor redColor];
                         self.resultsText.textColor = [UIColor whiteColor];
                         self.resultsText.text = @"No";
                         self.resultsView.hidden = NO;
+                        self.resetButton.hidden = NO;
                     } else {
                         [self.activityIndicator stopAnimating];
                         self.calculateButton.hidden = NO;
@@ -140,6 +144,32 @@
                 }
         }];
     }
+}
+
+- (IBAction)resetPressed:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Reset"
+                                                                        message: @"Are you sure?"
+                                                                 preferredStyle: UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                              style:UIAlertActionStyleCancel
+                                            handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Reset all"
+                                              style:UIAlertActionStyleDestructive
+                                            handler:^(UIAlertAction *action) {
+                                                [self resetAll];
+                                            }]];
+
+}
+
+- (void)resetAll {
+    self.resetButton.hidden = YES;
+    self.resultsView.hidden = YES;
+    self.calculateButton.hidden = NO;
+    self.streetAddressTextField.text = @"";
+    self.cityTextField.text = @"";
+    self.stateTextField.text = @"";
+    self.zipTextField.text = @"";
+    self.userProfile = nil;
 }
 
 @end
