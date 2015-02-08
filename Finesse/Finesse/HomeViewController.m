@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *resultsView;
 @property (weak, nonatomic) IBOutlet UILabel *resultsText;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) UserProfile *userProfile;
 
 @end
 
@@ -27,17 +28,14 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"PRESENT_FINANCEVC"]) {
+        FinancesViewController *financeVC = segue.destinationViewController;
+        financeVC.delegate = self;
+    }
 }
-
 
 #pragma mark - TextFieldDelegate
 
@@ -46,8 +44,8 @@
     return YES;
 }
 
-- (void)didFinishEditingFinanceInfo:(NSDictionary *)financeInfo {
-    
+- (void)didFinishEditingFinanceInfo:(UserProfile *)userProfile {
+    self.userProfile = userProfile;
 }
 
 @end

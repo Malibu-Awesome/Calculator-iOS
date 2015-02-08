@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *transportCostTextField;
 @property (weak, nonatomic) IBOutlet UISlider *housingCostSlider;
 @property (weak, nonatomic) IBOutlet UILabel *housingCostLabel;
-@property (weak, nonatomic) id <FinancesViewControllerDelegate> delegate;
 
 @end
 
@@ -24,7 +23,6 @@
     [super viewDidLoad];
     self.grossIncomeTextField.delegate = self;
     self.transportCostTextField.delegate = self;
-    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
                                                                                 action:@selector(dismissNumberPad)];
     tapGesture.cancelsTouchesInView = NO;
@@ -41,7 +39,7 @@
             formatter.numberStyle = NSNumberFormatterDecimalStyle;
             NSNumber *grossIncome = [formatter numberFromString: self.grossIncomeTextField.text];
             NSNumber *transportationCosts = [formatter numberFromString: self.transportCostTextField.text];
-            NSNumber *availableIncome = [NSNumber numberWithFloat: self.housingCostSlider.value];
+            NSNumber *availableIncome = [NSNumber numberWithFloat: (self.housingCostSlider.value * 12)];
             UserProfile *userProfile = [UserProfile createUserProfileWithAddress:nil
                                                                      grossIncome:grossIncome
                                                                  availableIncome:availableIncome

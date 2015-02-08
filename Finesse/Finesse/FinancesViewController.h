@@ -12,10 +12,12 @@
 @protocol FinancesViewControllerDelegate <NSObject>
 
 @required
-- (void)didFinishEditingFinanceInfo: (UserProfile*)userprofile;
+- (void)didFinishEditingFinanceInfo: (UserProfile*)userProfile;
 
 @end
 
 @interface FinancesViewController : UIViewController
+
+@property (weak, nonatomic) id <FinancesViewControllerDelegate> delegate;
 
 @end
