@@ -73,18 +73,22 @@
     [[NSOperationQueue mainQueue] addOperation:op];
 }
 
--(void)createGetRequestWithParams:(NSDictionary *)params
+-(void)createGetRequestWithParams:(NSDictionary *)params completionHandler: (void (^)(NSError *error, NSString *response)) completionHandler
 {
     NSString *streetString = params[@"street"];
     streetString = [streetString stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     //TODO: I need to make sure that streetString does not start or end with a " ".
     NSString *urlString = [NSString stringWithFormat:@"%@%@/%@/%@", ENDPOINT, streetString, params[@"city"], params[@"state"]];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    NSError *error;
-    [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlString parameters:params error:&error];
-    //Test with Reachability
-    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        NSLog(@"Reacbility: %@", AFStringFromNetworkReachabilityStatus(status));
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completionHandler(nil, responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        completionHandler(error, nil);
     }];
 }
 
