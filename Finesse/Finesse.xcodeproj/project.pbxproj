@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156DB9011A86A2D1001C6172 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DB9001A86A2D1001C6172 /* HomeViewController.m */; };
+		156DB9041A86B239001C6172 /* FinancesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 156DB9031A86B239001C6172 /* FinancesViewController.m */; };
 		385B3E9D1A867BE3007A2F06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3E9C1A867BE3007A2F06 /* main.m */; };
 		385B3EA01A867BE3007A2F06 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385B3E9F1A867BE3007A2F06 /* AppDelegate.m */; };
 		385B3EA61A867BE3007A2F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385B3EA41A867BE3007A2F06 /* Main.storyboard */; };
@@ -30,6 +32,10 @@
 
 /* Begin PBXFileReference section */
 		045B00F6347E7F7ED12BF6C7 /* libPods-Finesse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Finesse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		156DB8FF1A86A2D1001C6172 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		156DB9001A86A2D1001C6172 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		156DB9021A86B239001C6172 /* FinancesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancesViewController.h; sourceTree = "<group>"; };
+		156DB9031A86B239001C6172 /* FinancesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancesViewController.m; sourceTree = "<group>"; };
 		385B3E971A867BE3007A2F06 /* Finesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385B3E9B1A867BE3007A2F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385B3E9C1A867BE3007A2F06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -150,6 +156,10 @@
 		38E99FB01A86819D004BBE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				156DB8FF1A86A2D1001C6172 /* HomeViewController.h */,
+				156DB9001A86A2D1001C6172 /* HomeViewController.m */,
+				156DB9021A86B239001C6172 /* FinancesViewController.h */,
+				156DB9031A86B239001C6172 /* FinancesViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -395,6 +405,8 @@
 				38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */,
 				385B3EA01A867BE3007A2F06 /* AppDelegate.m in Sources */,
 				385B3E9D1A867BE3007A2F06 /* main.m in Sources */,
+				156DB9011A86A2D1001C6172 /* HomeViewController.m in Sources */,
+				156DB9041A86B239001C6172 /* FinancesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
