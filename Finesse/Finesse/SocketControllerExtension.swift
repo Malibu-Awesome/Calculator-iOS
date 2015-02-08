@@ -34,12 +34,9 @@ extension SocketController {
 //MARK: Messaging
     
 //MARK: Data
-    
-//Values for Address are Comma Separated Values.
-    func generateDataObject () -> NSData {
-//TODO: This is just so this shuts up.
-        return NSData()
+    @objc(sendJSON:)
+    func sendJSONObject(object: NSData) {
+        println("Data Written")
+        self.socket.writeData(object)
     }
-    
-    
 }

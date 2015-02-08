@@ -20,6 +20,7 @@
 		388AE1CF1A86A7CA002E8431 /* SocketControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1CE1A86A7CA002E8431 /* SocketControllerExtension.swift */; };
 		388AE1D81A86B6F1002E8431 /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1D71A86B6F1002E8431 /* UserProfile.m */; };
 		388AE1DB1A86B773002E8431 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 388AE1DA1A86B773002E8431 /* Address.m */; };
+		38B95E7A1A87172100B4D122 /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B95E791A87172100B4D122 /* NetworkController.m */; };
 		38E99FB51A8681D0004BBE17 /* SocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E99FB41A8681D0004BBE17 /* SocketController.swift */; };
 		38F79E2A1A86CD3900553390 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F79E291A86CD3900553390 /* JavaScriptCore.framework */; };
 		7355388836EA44C1454DD23A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFFC2DBF7553AA69691616C /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -62,6 +63,8 @@
 		388AE1D71A86B6F1002E8431 /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		388AE1D91A86B773002E8431 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		388AE1DA1A86B773002E8431 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		38B95E781A87172100B4D122 /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
+		38B95E791A87172100B4D122 /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 		38E99FB31A8681D0004BBE17 /* Finesse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finesse-Bridging-Header.h"; sourceTree = "<group>"; };
 		38E99FB41A8681D0004BBE17 /* SocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketController.swift; sourceTree = "<group>"; };
 		38F79E291A86CD3900553390 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -185,6 +188,8 @@
 				388AE1CC1A86A6CF002E8431 /* DataController.m */,
 				156DB9021A86B239001C6172 /* FinancesViewController.h */,
 				156DB9031A86B239001C6172 /* FinancesViewController.m */,
+				38B95E781A87172100B4D122 /* NetworkController.h */,
+				38B95E791A87172100B4D122 /* NetworkController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				156DB9011A86A2D1001C6172 /* HomeViewController.m in Sources */,
 				388AE1CD1A86A6CF002E8431 /* DataController.m in Sources */,
 				388AE1CA1A86A426002E8431 /* Constants.m in Sources */,
+				38B95E7A1A87172100B4D122 /* NetworkController.m in Sources */,
 				156DB9041A86B239001C6172 /* FinancesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

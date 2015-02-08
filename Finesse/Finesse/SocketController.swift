@@ -12,7 +12,7 @@ import Starscream
 
 @objc(SocketController)
 class SocketController : WebSocketDelegate {
-    private var endpoint = NSURL(string: FIN_ENDPOINT)!
+    private var endpoint = NSURL(string: ENDPOINT)!
     var socket : WebSocket
     
 //MARK: Init
@@ -36,10 +36,15 @@ class SocketController : WebSocketDelegate {
 //MARK: Receiving
     func websocketDidReceiveData(data: NSData) {
         println("Received data from Websocket")
+        println("\(data)");
+        var error : NSError?
+        var receivedJSON = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+        println("\(receivedJSON)")
     }
     
     func websocketDidReceiveMessage(text: String) {
         println("Received message from Websocket")
+        println("Text:\n\(text)")
     }
     
 //MARK: Error
