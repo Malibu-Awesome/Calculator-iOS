@@ -61,7 +61,7 @@
 #pragma mark - Request
 -(void)testGETRequest
 {
-    NSURL *url = [NSURL URLWithString:FIN_ENDPOINT];
+    NSURL *url = [NSURL URLWithString:@"https://guarded-everglades-4877.herokuapp.com/api/v0/geo-route/4600+Silver+Hill+Rd/Suitland/MD"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     op.responseSerializer = [AFJSONResponseSerializer serializer];

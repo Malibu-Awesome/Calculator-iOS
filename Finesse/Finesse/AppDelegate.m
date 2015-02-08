@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     _dataController = [DataController sharedInstance];
+    _networkController = [NetworkController sharedInstance];
     
     _dataQueue = [[NSOperationQueue alloc] init];
     _dataQueue.qualityOfService = NSOperationQueuePriorityHigh;
@@ -29,6 +30,8 @@
         //
     }];
     //[[NSNotificationCenter defaultCenter] postNotificationName:<#(NSString *)#> object:<#(id)#> userInfo:<#(NSDictionary *)#>];
+    
+    [_networkController testGETRequest];
     
     return YES;
 }

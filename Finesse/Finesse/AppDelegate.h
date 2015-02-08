@@ -15,8 +15,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) DataController *dataController;
-@property (nonatomic, strong) NetworkController * networkController;
-
+@property (nonatomic, strong) NetworkController *networkController;
 
 @end
 

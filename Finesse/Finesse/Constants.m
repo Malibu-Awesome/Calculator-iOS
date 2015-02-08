@@ -8,7 +8,10 @@
 
 #import "Constants.h"
 
-NSString* const FIN_ENDPOINT = @"this is where the endpoint will live";
+NSString* const FIN_ENDPOINT = @"https://guarded-everglades-4877.herokuapp.com/api/v0/geo-route/";
+//Argument Strain example.
+//4600+Silver+Hill+Rd/Suitland/MD
+//Format is Address+Spaces/City/State
 
 @implementation Constants
 

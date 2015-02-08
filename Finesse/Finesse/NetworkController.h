@@ -11,4 +11,7 @@
 
 @interface NetworkController : NSObject
 
++(NetworkController *)sharedInstance;
+-(void)testGETRequest;
+
 @end
