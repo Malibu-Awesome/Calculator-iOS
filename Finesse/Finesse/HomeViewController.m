@@ -11,7 +11,10 @@
 @interface HomeViewController () <UITextFieldDelegate, FinancesViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *enterIncomeButton;
-@property (weak, nonatomic) IBOutlet UITextField *enterAddressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *streetAddressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *cityTextField;
+@property (weak, nonatomic) IBOutlet UITextField *stateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *zipTextField;
 @property (weak, nonatomic) IBOutlet UIView *resultsView;
 @property (weak, nonatomic) IBOutlet UILabel *resultsText;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -23,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.enterAddressTextField.delegate = self;
+    self.streetAddressTextField.delegate = self;
     self.resultsView.layer.cornerRadius = 10.0f;
     
 }
