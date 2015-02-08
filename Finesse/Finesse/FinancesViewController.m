@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *transportCostTextField;
 @property (weak, nonatomic) IBOutlet UISlider *housingCostSlider;
 @property (weak, nonatomic) IBOutlet UILabel *housingCostLabel;
+@property (weak, nonatomic) id <FinancesViewControllerDelegate> delegate;
 
 @end
 
@@ -28,11 +29,15 @@
 #pragma mark - Navigation
 
 - (IBAction)doneEditingIncome:(id)sender {
-    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (IBAction)cancelEditingIncome:(id)sender {
-    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 #pragma mark - UISlider Methods
