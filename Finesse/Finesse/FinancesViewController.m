@@ -29,9 +29,19 @@
 #pragma mark - Navigation
 
 - (IBAction)doneEditingIncome:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    if (![self.grossIncomeTextField.text isEqualToString: @""] &&
+        ![self.transportCostTextField.text isEqualToString:@""]) {
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        }];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Error!"
+                                                                       message:@"You need to enter all information!"
+                                                                preferredStyle: UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (IBAction)cancelEditingIncome:(id)sender {
