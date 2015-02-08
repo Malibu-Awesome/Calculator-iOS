@@ -75,10 +75,13 @@
 
 -(void)createGetRequestWithParams:(NSDictionary *)params completionHandler: (void (^)(NSError *error, NSString *response)) completionHandler
 {
-    NSString *streetString = params[@"street"];
-    streetString = [streetString stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    //TODO: I need to make sure that streetString does not start or end with a " ".
-    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@/%@", ENDPOINT, streetString, params[@"city"], params[@"state"]];
+//URL/address/city/state/HousingCost(Available Income)/transportationCosts
+//@"http://guarded-everglades-4877.herokuapp.com/api/v0/geo-route/4600+Silver+Hill+Rd/Suitland/MD/18000/5000";
+//    NSDictionary *address = @{ @"street":streetAddress, @"city":_address.city, @"state":_address.city };
+//    NSDictionary *output = [[NSDictionary alloc] initWithObjects:@[address, _grossIncome, _availableIncome, _transportationCosts]
+//                                                         forKeys:@[@"address", @"grossIncome", @"available", @"transportationCosts"]];
+    NSDictionary *address = params[@"address"];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@/%@/%@/%@/%@", ENDPOINT, address[@"street"], address[@"city"], address[@"state"], params[@"available"], params[@"transportationCosts"]];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
