@@ -40,6 +40,16 @@
     return profile;
 }
 
+-(NSDictionary *)makeDictionary
+{
+    NSDictionary *output = [NSDictionary dictionaryWithObjectsAndKeys: _address.street, @"street",
+                            _address.city, @"city",
+                            _address.state, @"state", nil];
+//    NSString *addressOutput = [NSString stringWithFormat:@"%@+%@+%@+%i", _address.street, _address.city, _address.state, [_address.zip intValue]];
+//    NSDictionary *output = [[NSDictionary alloc] initWithObjects:@[addressOutput, _grossIncome, _percentAvailableIncome, _transportationCosts] forKeys:@[@"address", @"grossIncome", @"percentAvailable", @"transportationCosts"]];
+    return output;
+}
+
 //Input is an dictionary with the keys: street, city, state, zip
 //Zip is an NSNumber
 -(void)createAddressWithDictionary:(NSDictionary *)input
@@ -88,6 +98,5 @@
 {
     _transportationCosts = transportation;
 }
-
 
 @end

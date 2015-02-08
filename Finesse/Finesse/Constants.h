@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString* const FIN_ENDPOINT;
+extern NSString* const ENDPOINT;
 
 @interface Constants : NSObject
 

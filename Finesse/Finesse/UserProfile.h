@@ -20,5 +20,6 @@
                                  grossIncome:(NSNumber *)gross
                              availableIncome:(NSNumber *)available
                          transportationCosts:(NSNumber *)transportation;
+-(NSDictionary *)makeDictionary;
 
 @end
