@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserProfile.h"
 
 @protocol FinancesViewControllerDelegate <NSObject>
 
 @required
-- (void)didFinishEditingFinanceInfo: (NSDictionary *)financeInfo;
+- (void)didFinishEditingFinanceInfo: (UserProfile*)userprofile;
 
 @end
 

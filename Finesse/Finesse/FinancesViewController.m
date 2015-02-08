@@ -37,6 +37,16 @@
     if (![self.grossIncomeTextField.text isEqualToString: @""] &&
         ![self.transportCostTextField.text isEqualToString:@""]) {
         [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+            NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+            formatter.numberStyle = NSNumberFormatterDecimalStyle;
+            NSNumber *grossIncome = [formatter numberFromString: self.grossIncomeTextField.text];
+            NSNumber *transportationCosts = [formatter numberFromString: self.transportCostTextField.text];
+            NSNumber *availableIncome = [NSNumber numberWithFloat: self.housingCostSlider.value];
+            UserProfile *userProfile = [UserProfile createUserProfileWithAddress:nil
+                                                                     grossIncome:grossIncome
+                                                                 availableIncome:availableIncome
+                                                             transportationCosts:transportationCosts];
+            [self.delegate didFinishEditingFinanceInfo:userProfile];
         }];
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle: @"Error!"
