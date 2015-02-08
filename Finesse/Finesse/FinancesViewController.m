@@ -24,6 +24,11 @@
     [super viewDidLoad];
     self.grossIncomeTextField.delegate = self;
     self.transportCostTextField.delegate = self;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                                action:@selector(dismissNumberPad)];
+    tapGesture.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 #pragma mark - Navigation
@@ -70,8 +75,7 @@
 
 #pragma mark - TextFieldDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+-(void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField == self.grossIncomeTextField && self.grossIncomeTextField.text != nil) {
         int income = [self.grossIncomeTextField.text intValue];
         // Set the default housing budget to 36% of gross income & round to nearest number divisible by 50
@@ -83,7 +87,12 @@
         self.housingCostSlider.value = defaultHousingCost;
         self.housingCostLabel.text = [[NSString alloc] initWithFormat:@"$%ld", (long)defaultHousingCost];
     }
-    return YES;
+}
+
+#pragma mark - UIGestureRecognizer Selectors
+
+-(void)dismissNumberPad {
+    [self.view endEditing:YES];
 }
 
 @end
